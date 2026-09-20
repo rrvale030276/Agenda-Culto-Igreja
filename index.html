@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#172023">
+  <title>Agenda de Cultos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <span class="eyebrow">PROGRAMAÇÃO</span>
+      <h1>Agenda de Cultos</h1>
+    </div>
+    <button id="btnNovo" class="icon-btn" title="Novo culto">＋</button>
+  </header>
+
+  <main>
+    <section class="hero card">
+      <div class="hero-badge">✦</div>
+      <div>
+        <p id="heroTipo">Domingos Especiais</p>
+        <h2 id="heroTitulo">SERVIÇO DE CULTO</h2>
+        <strong id="heroData">06 de Setembro de 2026</strong>
+        <span id="heroInicio">Início: 19h00</span>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="btnCompartilhar" class="primary">↗ Compartilhar</button>
+      <button id="btnImprimir" class="secondary">🖨 Imprimir</button>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">ROTEIRO</span>
+          <h2>Programação</h2>
+        </div>
+        <span id="contador" class="counter">0 itens</span>
+      </div>
+      <div id="lista" class="timeline"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="active">⌂<span>Início</span></button>
+    <button id="navNovo">＋<span>Novo</span></button>
+    <button id="navSobre">ⓘ<span>Sobre</span></button>
+  </nav>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="modalTitulo">Novo culto</h2>
+        <button id="fecharModal">×</button>
+      </div>
+
+      <form id="formCulto">
+        <label>Título
+          <input id="titulo" required value="SERVIÇO DE CULTO">
+        </label>
+        <label>Tema / tipo
+          <input id="tipo" required value="Domingos Especiais">
+        </label>
+        <div class="grid2">
+          <label>Data
+            <input id="data" type="date" required value="2026-09-06">
+          </label>
+          <label>Início
+            <input id="inicio" type="time" required value="19:00">
+          </label>
+        </div>
+        <button class="primary full" type="submit">Salvar culto</button>
+      </form>
+
+      <hr>
+
+      <div class="modal-head">
+        <h3>Itens da programação</h3>
+        <button id="btnAdicionarItem" class="small-btn">＋ Item</button>
+      </div>
+      <div id="editorItens"></div>
+    </div>
+  </div>
+
+  <div id="sobre" class="modal hidden">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2>Agenda de Cultos</h2>
+        <button id="fecharSobre">×</button>
+      </div>
+      <p>Versão 1 — aplicativo de programação de cultos para celular.</p>
+      <p>Os dados ficam salvos no navegador do aparelho usando armazenamento local.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
